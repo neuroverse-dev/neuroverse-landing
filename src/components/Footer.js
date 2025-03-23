@@ -41,7 +41,7 @@ const Footer = () => {
       </div>
     </div>
 
-    <div className="text-center mt-8">
+    {/* <div className="text-center mt-8">
       <p>Stay Updated</p>
       <p className="mb-4">Sign up to receive the latest updates about Neuroverse.</p>
       <div className="flex justify-center gap-4">
@@ -52,7 +52,7 @@ const Footer = () => {
         />
         <button className="bg-blue-500 text-white py-2 px-4 rounded">Subscribe</button>
       </div>
-    </div>
+    </div> */}
 
     <div className="text-center mt-8">
       <p>© 2024 Neuroverse. All rights reserved.</p>
