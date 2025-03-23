@@ -1,8 +1,10 @@
-// src/components/HeroSection.js
 'use client'
 import React, { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
+import logo from "../../public/images/Logo.png"
+import { Logo } from '@/constants/svg'
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -14,11 +16,7 @@ const Navbar = () => {
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
-                alt="Company Logo"
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-                className="h-8 w-auto"
-              />
+              <Logo/>
             </a>
           </div>
           <div className="flex lg:hidden">

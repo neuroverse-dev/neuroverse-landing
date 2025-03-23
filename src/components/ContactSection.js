@@ -17,7 +17,7 @@ export default function ContactSection() {
 
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Get in Touch with Neuroverse Sales</h2>
-        <p className="mt-2 text-lg/8 text-gray-600">Discover how Neuroverse's AI-powered agents can enhance your business operations. Let’s chat about your needs!</p>
+        <p className="mt-2 text-lg/8 text-gray-600">Discover how Neuroverse&apos;s AI-powered agents can enhance your business operations. Let&apos;s chat about your needs!</p>
       </div>
       <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">

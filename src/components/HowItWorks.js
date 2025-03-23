@@ -27,7 +27,7 @@ export default function HowItWorksSection() {
           <h2 className="text-base font-semibold text-indigo-600">How It Works</h2>
           <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Start Building in 3 Simple Steps Section</p>
           <p className="mt-6 text-lg text-gray-600">
-            Build your AI-powered agents in just three easy steps. Whether you need text-based or voice-enabled agents, we've got you covered.
+            Build your AI-powered agents in just three easy steps. Whether you need text-based or voice-enabled agents, we&apos;ve got you covered.
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-16">
