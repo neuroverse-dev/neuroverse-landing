@@ -1,69 +1,76 @@
-// src/components/HeroSection.js
 'use client'
-import React, { useState } from 'react'
+import { Images } from '@/constants/data'
+import { Location, Mail, Phone } from '@/constants/svg'
+import Image from 'next/image'
 
 const Footer = () => {
 
   return (
-    <footer className="bg-gray-900 text-white py-8">
-    <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-center md:text-left">
-     
-      <div>
-        <h3 className="text-lg font-bold mb-4">Explore Neuroverse</h3>
-        <ul>
-          <li>Home</li>
-          <li>Features</li>
-          <li>Pricing</li>
-          <li>Use Cases</li>
-          <li>Blog</li>
-          <li>About Us</li>
-        </ul>
+    <footer className='md:px-20 h-[333px] '>
+      <div className='grid lg:grid-cols-3 md:grid-cols-1  mt-[65px] mb-15'>
+        <div className=''>
+          <Image
+            src={'/images/Logo.png'}
+            width={307}
+            height={36}
+            alt='company logo'
+          />
+          <div className='flex mt-[47px]'>
+            {Object.values(Images).map((item, index) => (
+              <Image
+                src={item}
+                key={index}
+                width={35.11}
+                height={35.11}
+                alt='company logo'
+                className='me-3'
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className='lg:justify-self-center font-medium lg:mt-0 mt-10'>
+          <p className='font-bold'>Explore</p>
+          <p className='mt-5 text-[#B8B8B8]'>Home</p>
+          <p className='mt-[12px] text-[#B8B8B8]'>Features</p>
+          <p className='mt-[12px] text-[#B8B8B8]'>About us</p>
+        </div>
+
+        <div className='lg:justify-self-center font-medium lg:mt-0 mt-10'>
+          <p className='font-bold'>Get in Touch</p>
+          <p className='mt-5 text-[#B8B8B8] flex items-center '>
+            <span className='pe-2'>
+              <Mail />
+            </span>
+            <span>
+              support@neuroverse.build
+            </span>
+          </p>
+          <p className='mt-5 text-[#B8B8B8] flex items-center '>
+            <span className='pe-2'>
+              <Phone />
+            </span>
+            <span>
+              +1 123-456-7890
+            </span>
+          </p>
+          <p className='mt-5 text-[#B8B8B8] flex items-center '>
+            <span className='pe-2'>
+              <Location />
+            </span>
+            <span>
+              123 Innovation Drive
+            </span>
+          </p>
+        </div>
       </div>
 
-      <div>
-        <h3 className="text-lg font-bold mb-4">Get in Touch</h3>
-        <ul>
-          <li>Email: support@neuroverse.build</li>
-          <li>Phone: +1 123-456-7890</li>
-          <li>Address: 123 Innovation Drive</li>
-        </ul>
-      </div>
+      <div className='h-[1px] bg-white' />
 
-      <div>
-        <h3 className="text-lg font-bold mb-4">Connect with Us</h3>
-        <ul className="flex justify-center gap-4">
-          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-          <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-          <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a></li>
-        </ul>
+      <div className='mt-8'>
+        Terms  |  Privacy  |  Copyright @2025 Neuroverse
       </div>
-    </div>
-
-    {/* <div className="text-center mt-8">
-      <p>Stay Updated</p>
-      <p className="mb-4">Sign up to receive the latest updates about Neuroverse.</p>
-      <div className="flex justify-center gap-4">
-        <input
-          type="email"
-          className="p-2 w-full max-w-xs text-gray-900"
-          placeholder="Email Address"
-        />
-        <button className="bg-blue-500 text-white py-2 px-4 rounded">Subscribe</button>
-      </div>
-    </div> */}
-
-    <div className="text-center mt-8">
-      <p>© 2024 Neuroverse. All rights reserved.</p>
-      <div className="mt-4">
-        <ul className="flex justify-center gap-8 text-sm">
-          <li><a href="/terms" className="hover:underline">Terms of Service</a></li>
-          <li><a href="/privacy" className="hover:underline">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer> 
+    </footer>
   )
 }
 
