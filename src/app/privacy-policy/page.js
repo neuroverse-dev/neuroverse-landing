@@ -19,8 +19,8 @@ export default function PrivacyPolicy() {
                 contact@neuroverse.build
             </p>
             <p className="text-gray-700 mt-4 text-sm sm:text-base">
-                NeuroVerse, Inc. ("NeuroVerse," "we," "us," "our") respects your
-                concerns about privacy. This Privacy Policy ("Privacy Policy")
+                NeuroVerse, Inc. (&quot;NeuroVerse,&quot; &quot;we,&quot; &quot;us,&quot; &quot;our&quot;) respects your
+                concerns about privacy. This Privacy Policy (&quot; Privacy Policy&quot; )
                 applies to personal information (listed below) we collect on
                 websites created, operated and maintained by NeuroVerse on its own
                 behalf, and on behalf of its customers and business partners,
@@ -28,7 +28,7 @@ export default function PrivacyPolicy() {
                 and business partners. Applicable sites include NeuroVerse.build and
                 other *.NeuroVerse.build sites. This Privacy Policy is incorporated
                 into, made subject to and is governed by, Website Terms of Use
-                ("Terms") by and between NeuroVerse and you ("you", "your").
+                (&quot; Terms&quot; ) by and between NeuroVerse and you (&quot; you&quot; , &quot; your&quot; ).
             </p>
             <p className="text-gray-700 mt-2 text-sm sm:text-base">
                 This Privacy Policy describes the types of information we
@@ -132,7 +132,7 @@ export default function PrivacyPolicy() {
             <p>
                 Our web servers may log information such as your device and
                 operating system type, browser type, domain, device ID, Internet
-                Protocol ("IP") address, and other system settings, as well as
+                Protocol (&quot; IP&quot; ) address, and other system settings, as well as
                 the language your system uses and the country and time zone
                 where your device is located. The web server logs also may
                 record information such as the address of the web page that
@@ -143,7 +143,7 @@ export default function PrivacyPolicy() {
             <p className=" mt-4 text-sm sm:text-base">
                 To control which web servers place and access cookies and
                 collect information by automated means, we may place tags on our
-                Web pages called "web beacons," which are small files that allow
+                Web pages called &quot; web beacons,&quot;  which are small files that allow
                 us to understand the actions of visitors to our website(s). We
                 may use similar technology in emails we send, which may enable
                 the placing or accessing of cookies and also enable us to know
@@ -219,7 +219,7 @@ export default function PrivacyPolicy() {
                 information to the NeuroVerse Careers portion of its site. <br />
                 Evaluation, qualification, and certification of visitors who
                 have applied to become a NeuroVerse independent agent, such as by
-                submitting information to the NeuroVerse "Become an Agent"
+                submitting information to the NeuroVerse &quot; Become an Agent&quot; 
                 portion of its site. <br />
                 Conducting user surveys and other market research on visitors
                 and NeuroVerse products and services. <br />
@@ -272,7 +272,7 @@ export default function PrivacyPolicy() {
                 corporate websites or trade shows with third parties who may
                 market their products or services to you. If you do not want us
                 to share your personal information with these companies, contact
-                us via one of the methods listed under "Your Privacy Choices"
+                us via one of the methods listed under &quot; Your Privacy Choices&quot; 
                 section or you may refer to our details under Contact Us below
                 or send us an email directly at contact@NeuroVerse.build. <br />
                 We may also disclose your personal information: <br />
@@ -300,7 +300,7 @@ export default function PrivacyPolicy() {
                 NeuroVerse may share personal information collected from you with
                 third-party service providers that NeuroVerse uses to support the
                 provision of services, including but not limited to third-party
-                payment processing services, email provider, "live chat"
+                payment processing services, email provider, &quot; live chat&quot; 
                 provider or companies that help us deliver interactive on-line
                 advertising such as banner ads. As allowed by applicable law,
                 NeuroVerse may disclose automatically collected and other
@@ -418,8 +418,8 @@ export default function PrivacyPolicy() {
                 account-related updates so as to continue to support your
                 account. <br />
                 If you have requested to receive SMS messages from NeuroVerse, you
-                may discontinue service at any time by replying "STOP" to any
-                message you receive or by texting "STOP" to the shortcode from
+                may discontinue service at any time by replying &quot; STOP&quot;  to any
+                message you receive or by texting &quot; STOP&quot;  to the shortcode from
                 your mobile device. You will not receive any additional
                 messages. <br />
                 <br />
