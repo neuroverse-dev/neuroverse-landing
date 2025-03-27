@@ -22,33 +22,36 @@ export default function Home() {
       />
 
 
-      
-       <FeatureSection
-        title="3. What Can You Do with NeuroVerse?"
-        subtitle="Discover the Power of Human-Like AI Agents—Anywhere, in Any Language."
-        featuresText="Create advanced AI agents effortlessly without coding, and deploy them across platforms."
-      />
+      <div id="features">
+        <FeatureSection
+          title="3. What Can You Do with NeuroVerse?"
+          subtitle="Discover the Power of Human-Like AI Agents—Anywhere, in Any Language."
+          featuresText="Create advanced AI agents effortlessly without coding, and deploy them across platforms."
+        />
+      </div>
 
 
-      <HowItWorksSection />
+      <div id="product">
+        <HowItWorksSection />
+      </div>
 
+      <div id="marketplace">
+        <IndustriesSection />
+      </div>
 
-     <IndustriesSection/>
+      {/* <VideoSection /> */}
 
-
-        {/* <VideoSection /> */}
-
-      <UseCasesSection /> 
+      <UseCasesSection />
 
 
 
       {/* <AboutSection /> */}
- 
+
       {/* <TestimonialSection /> */}
 
-
-      <ContactSection />
-
+      <div id="contact">
+        <ContactSection />
+      </div>
     </div>
   );
 }

@@ -2,8 +2,6 @@
 import React, { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Image from 'next/image'
-import logo from "../../public/images/Logo.png"
 import { Logo } from '@/constants/svg'
 
 const Navbar = () => {
@@ -16,7 +14,7 @@ const Navbar = () => {
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <Logo/>
+              <Logo />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -29,13 +27,26 @@ const Navbar = () => {
               <Bars3Icon aria-hidden="true" className="size-6" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12">
-            {['Product', 'Features', 'Marketplace', 'Company'].map((item) => (
+          {/* <div className="hidden lg:flex lg:gap-x-12">
+            {['Product', 'Features', 'Marketplace', 'About Us'].map((item) => (
               <a key={item} href="#" className="text-sm font-semibold text-gray-900">
                 {item}
               </a>
             ))}
+          </div> */}
+          <div className="hidden lg:flex lg:gap-x-12">
+            {[
+              { name: 'Product', id: 'product' },
+              { name: 'Features', id: 'features' },
+              { name: 'Marketplace', id: 'marketplace' },
+              { name: 'About Us', id: 'about' }
+            ].map(({ name, id }) => (
+              <a key={id} href={`#${id}`} className="text-sm font-semibold text-gray-900">
+                {name}
+              </a>
+            ))}
           </div>
+
           {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a href="#" className="text-sm font-semibold text-gray-900">
               Log in <span aria-hidden="true">&rarr;</span>

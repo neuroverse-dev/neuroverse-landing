@@ -13,49 +13,49 @@ import {
 const industries = [
   {
     name: 'E-commerce',
-    description: 'AI agents for personalized shopping assistance and post-purchase support.',
+    description: 'AI agents enhance the shopping experience with tailored recommendations and seamless post-purchase support.',
     icon: ShoppingCartIcon,
     audio: '/audio/ecommerce.mp3',
   },
   {
     name: 'Healthcare',
-    description: 'Voice assistants for appointment scheduling and patient education.',
+    description: 'AI-powered voice assistants streamline appointment scheduling and provide personalized patient education for improved healthcare accessibility.',
     icon: UserCircleIcon,
     audio: "/audio/ecommerce.mp3",
   },
   {
     name: 'Education',
-    description: 'Interactive tutors and content narrators for students.',
+    description: 'AI-powered interactive tutors and content narrators enhance learning with personalized guidance and immersive storytelling.',
     icon: AcademicCapIcon,
     audio: "/audio/ecommerce.mp3",
   },
   {
     name: 'Finance',
-    description: 'Virtual agents for loan inquiries, customer support, and financial advice.',
+    description: 'Virtual agents for loan inquiries, customer support, and personalized financial guidance.',
     icon: BanknotesIcon,
     audio: "/audio/ecommerce.mp3",
   },
   {
     name: 'Real Estate',
-    description: 'AI assistants for property inquiries and virtual walkthroughs.',
+    description: 'AI-powered virtual assistants streamline property inquiries, provide immersive virtual tours, and enhance real estate engagement.',
     icon: HomeIcon,
     audio: "/audio/ecommerce.mp3",
   },
   {
     name: 'Media & Entertainment',
-    description: 'Voiceovers, audiobooks, and interactive audience engagement.',
+    description: 'AI-driven voice assistants enhance media and entertainment with dynamic voiceovers and interactive audience engagement.',
     icon: VideoCameraIcon,
     audio: "/audio/ecommerce.mp3",
   },
   {
     name: 'Travel & Hospitality',
-    description: '24/7 agents for booking assistance and trip planning.',
+    description: 'Smart virtual agents simplify travel with 24/7 booking assistance and personalized trip planning.',
     icon: MapPinIcon,
     audio: "/audio/ecommerce.mp3",
   },
   {
     name: 'Technology & SaaS',
-    description: 'Proactive lead engagement and customer onboarding.',
+    description: 'AI-driven virtual agents enhance lead engagement and streamline customer onboarding for Technology & SaaS businesses.',
     icon: CpuChipIcon,
     audio: "/audio/ecommerce.mp3",
   },
@@ -76,7 +76,7 @@ export default function IndustriesSection() {
             Transform the way your business operates with our cutting-edge AI solutions tailored for various industries.
           </p>
         </div>
-        <div className="mt-16 grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="mt-16 grid grid-cols-1 gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {industries.map((industry) => (
             <div
               key={industry.name}
