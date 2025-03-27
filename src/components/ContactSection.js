@@ -81,6 +81,7 @@ export default function ContactSection() {
                 id="firstName"
                 name="firstName"
                 type="text"
+                required
                 autoComplete="given-name"
                 className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
               />
@@ -95,6 +96,7 @@ export default function ContactSection() {
                 id="lastName"
                 name="lastName"
                 type="text"
+                required
                 autoComplete="family-name"
                 className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
               />
@@ -109,6 +111,7 @@ export default function ContactSection() {
                 id="company"
                 name="company"
                 type="text"
+                required
                 autoComplete="organization"
                 className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
               />
@@ -123,6 +126,7 @@ export default function ContactSection() {
                 id="email"
                 name="email"
                 type="email"
+                required
                 autoComplete="email"
                 className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
               />
@@ -136,6 +140,7 @@ export default function ContactSection() {
               <textarea
                 id="message"
                 name="message"
+                required
                 rows={4}
                 className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                 defaultValue={''}
