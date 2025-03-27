@@ -4,9 +4,11 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Logo } from '@/constants/svg'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const router = useRouter();
 
   return (
     <section className="bg-white">
@@ -36,16 +38,21 @@ const Navbar = () => {
             ))}
           </div> */}
           <div className="hidden lg:flex lg:gap-x-12">
-            {[
-              { name: 'Product', id: 'product' },
-              { name: 'Features', id: 'features' },
-              { name: 'Marketplace', id: 'marketplace' },
-              { name: 'About Us', id: 'about' }
-            ].map(({ name, id }) => (
-              <a key={id} href={`#${id}`} className="text-sm font-semibold text-gray-900">
-                {name}
-              </a>
-            ))}
+          {[
+                    { label: 'Home', path: '/' },
+                    { label: 'Features', path: '/#features' },
+                    { label: 'Marketplace', path: '/#marketplace' },
+                    { label: 'Company', path: '/#about' }
+                  ].map((item) => (
+                    <button
+                      key={item.label}
+                      className="hover:underline text-black"
+                      type="button"
+                      onClick={() => router.push(item.path)}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
           </div>
 
           {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -80,15 +87,22 @@ const Navbar = () => {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  {['Product', 'Features', 'Marketplace', 'Company'].map((item) => (
-                    <a
-                      key={item}
-                      href="#"
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  {[
+                    { label: 'Home', path: '/' },
+                    { label: 'Features', path: '/#features' },
+                    { label: 'Marketplace', path: '/#marketplace' },
+                    { label: 'Company', path: '/#about' }
+                  ].map((item) => (
+                    <button
+                      key={item.label}
+                      className="hover:underline"
+                      type="button"
+                      onClick={() => router.push(item.path)}
                     >
-                      {item}
-                    </a>
+                      {item.label}
+                    </button>
                   ))}
+
                 </div>
                 <div className="py-6">
                   <a
