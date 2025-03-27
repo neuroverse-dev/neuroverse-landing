@@ -23,7 +23,7 @@ const Footer = () => {
                   width={35.11}
                   height={35.11}
                   alt="social media logo"
-                  className="me-3 cursor-pointer"
+                  className="me-3 cursor-pointer rounded-4xl"
                 />
               </a>
             ))}
