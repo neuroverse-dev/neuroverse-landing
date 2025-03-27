@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Logo } from '@/constants/svg'
+import Image from 'next/image'
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -59,9 +60,11 @@ const Navbar = () => {
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
-                <img
+                <Image
                   alt="Logo"
                   src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+                  height={200}
+                  width={200}
                   className="h-8 w-auto"
                 />
               </a>

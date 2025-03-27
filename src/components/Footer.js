@@ -2,6 +2,7 @@
 import { Images } from '@/constants/data'
 import { Location, Mail, Phone } from '@/constants/svg'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Footer = () => {
 
@@ -17,7 +18,7 @@ const Footer = () => {
           />
           <div className="flex mt-[47px]">
             {Object.values(Images).map((item, index) => (
-              <a key={index} href={item.link} target="_blank" rel="noopener noreferrer">
+              <Link key={index} href={item.link} target="_blank" rel="noopener noreferrer">
                 <Image
                   src={item.src}
                   width={35.11}
@@ -25,7 +26,7 @@ const Footer = () => {
                   alt="social media logo"
                   className="me-3 cursor-pointer rounded-4xl"
                 />
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -33,13 +34,13 @@ const Footer = () => {
         <div className='lg:justify-self-center font-medium lg:mt-0 mt-10'>
           <p className='font-bold'>Explore</p>
           <p className="mt-5 text-[#B8B8B8] hover:underline cursor-pointer">
-            <a href="/">Home</a>
+            <Link href="/">Home</Link>
           </p>
           <p className="mt-[12px] text-[#B8B8B8] hover:underline cursor-pointer">
-            <a href="#features">Features</a>
+            <Link href="#features">Features</Link>
           </p>
           <p className="mt-[12px] text-[#B8B8B8] hover:underline cursor-pointer">
-            <a href="#about">About Us</a>
+            <Link href="#about">About Us</Link>
           </p>
 
         </div>
