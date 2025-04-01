@@ -25,8 +25,9 @@ export default function ContactSection() {
     }
 
     const perMinuteCost = calls * minutes * 30 * 0.15;
-    console.log("🚀 ~ calculateCost ~ perMinuteCost:", perMinuteCost)
-    setTotalCost((cost + perMinuteCost)/(workingHours * 30));
+    const totalCost = (cost + perMinuteCost) / (workingHours * 30);
+    setTotalCost(isNaN(totalCost) ? 0.00 : totalCost);
+
   };
 
 
@@ -240,7 +241,7 @@ export default function ContactSection() {
               <div className="relative w-full">
                 <input
                   type="number"
-                  placeholder="Average daily calls"
+                  // placeholder="Average daily calls"
                   className="w-full p-2 pr-12 border rounded bg-white appearance-none focus:outline focus:outline-2 focus:outline-indigo-600"
                   value={dailyCalls}
                   onChange={(e) => setDailyCalls(e.target.value)}
@@ -257,7 +258,7 @@ export default function ContactSection() {
                 <div className="relative w-full">
                   <input
                     type="number"
-                    placeholder="Average minutes per call"
+                    // placeholder="Average minutes per call"
                     className="w-full p-2 pr-20 border rounded bg-white appearance-none focus:outline focus:outline-2 focus:outline-indigo-600"
                     value={minutesPerCall}
                     onChange={(e) => setMinutesPerCall(e.target.value)}
@@ -273,7 +274,7 @@ export default function ContactSection() {
                 <div className="relative w-full">
                   <input
                     type="number"
-                    placeholder="Working hours daily"
+                    // placeholder="Working hours daily"
                     className="w-full p-2 pr-20 border rounded bg-white appearance-none focus:outline focus:outline-2 focus:outline-indigo-600"
                     value={workingHours}
                     onChange={(e) => setWorkingHours(e.target.value)}
