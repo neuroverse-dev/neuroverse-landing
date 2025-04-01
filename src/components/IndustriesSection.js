@@ -21,7 +21,7 @@ const industries = [
     name: 'Healthcare',
     description: 'AI-powered voice assistants streamline appointment scheduling and provide personalized patient education for improved healthcare accessibility.',
     icon: UserCircleIcon,
-    audio: "/audio/ecommerce.mp3",
+    audio: "/audio/health-care.mp4",
   },
   {
     name: 'Education',
@@ -39,7 +39,7 @@ const industries = [
     name: 'Real Estate',
     description: 'AI-powered virtual assistants streamline property inquiries, provide immersive virtual tours, and enhance real estate engagement.',
     icon: HomeIcon,
-    audio: "/audio/ecommerce.mp3",
+    audio: "/audio/real-estate.mp4",
   },
   {
     name: 'Media & Entertainment',
@@ -48,10 +48,10 @@ const industries = [
     audio: "/audio/ecommerce.mp3",
   },
   {
-    name: 'Travel & Hospitality',
+    name: 'Restaurant & Hotels',
     description: 'Smart virtual agents simplify travel with 24/7 booking assistance and personalized trip planning.',
     icon: MapPinIcon,
-    audio: "/audio/ecommerce.mp3",
+    audio: "/audio/restaurant-and-hotels.mp3",
   },
   {
     name: 'Technology & SaaS',
@@ -66,7 +66,7 @@ export default function IndustriesSection() {
     <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold tracking-wider text-indigo-600 uppercase">
+          <h2 className="text-base font-semibold tracking-wider text-indigo-600">
             Industries We Serve
           </h2>
           <p className="mt-4 text-4xl font-extrabold text-gray-900 sm:text-5xl">

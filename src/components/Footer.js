@@ -36,7 +36,7 @@ const Footer = () => {
           </div>
 
           <div className='lg:justify-self-center font-medium lg:mt-0 mt-10'>
-            <p className='font-bold'>Explore</p>
+            <p className='font-bold text-[#B8B8B8]'>Explore</p>
             <p className="mt-5 text-[#B8B8B8] hover:underline cursor-pointer">
               <Link href="/">Home</Link>
             </p>
@@ -50,7 +50,7 @@ const Footer = () => {
           </div>
 
           <div className="lg:justify-self-center font-medium lg:mt-0 mt-10">
-            <p className="font-bold">Get in Touch</p>
+            <p className="font-bold text-[#B8B8B8]">Get in Touch</p>
 
             <p className="mt-5 text-[#B8B8B8] flex items-center">
               <span className="pe-2">

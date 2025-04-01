@@ -3,19 +3,19 @@ import { ChatBubbleLeftEllipsisIcon, MicrophoneIcon, ComputerDesktopIcon, LinkIc
 
 const features = [
     {
-      name: 'Custom Text Agents',
+      name: 'Custom Chatbot',
       description:
         'Design chat agents tailored to your needs, perfect for a wide range of use cases.',
       icon: ChatBubbleLeftEllipsisIcon, // Chat bubble icon is more fitting for text agents
     },
     {
-      name: 'Voice Capabilities',
+      name: 'AI Call Agents',
       description:
         'Create lifelike audio agents with diverse voice options for a more immersive experience.',
       icon: MicrophoneIcon, // Microphone icon is suitable for voice capabilities
     },
     {
-      name: 'No Coding Needed',
+      name: 'Zero Code',
       description:
         'Build and deploy agents easily with our user-friendly, drag-and-drop interface.',
       icon: ComputerDesktopIcon, // Phone device icon to represent ease of use and accessibility

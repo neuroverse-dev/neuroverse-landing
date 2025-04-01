@@ -17,14 +17,14 @@ export default function Home() {
       <HeroSection
         title="Build AI Agents That Sound Human — In Any Language"
         subtitle="NeuroVerse powers natural, multilingual conversations across chat, voice, and beyond—no coding required."
-        primaryButtonText="Get Started for Free"
+        primaryButtonText="Inquire Now"
         secondaryButtonText="Watch Demo"
       />
 
 
       <div id="features">
         <FeatureSection
-          title="3. What Can You Do with NeuroVerse?"
+          title="What Can You Do with NeuroVerse?"
           subtitle="Discover the Power of Human-Like AI Agents—Anywhere, in Any Language."
           featuresText="Create advanced AI agents effortlessly without coding, and deploy them across platforms."
         />
