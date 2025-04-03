@@ -10,7 +10,7 @@ const Footer = () => {
   const router = useRouter();
 
   return (
-    <footer className='md:px-20 bg-gray-900 py-10' >
+    <footer className='md:px-20 px-10 bg-gray-900 py-10' >
       <div>
         <div className='grid lg:grid-cols-3 md:grid-cols-1  mt-[65px] mb-15'>
           <div className=''>
@@ -90,9 +90,9 @@ const Footer = () => {
         <div className='h-[1px] bg-white' />
 
       </div>
-      <div className="pt-8 bg-gray-900 w-full text-white flex justify-center space-x-4">
+      <div className="pt-8 bg-gray-900 w-full text-white flex justify-center  ">
         <button
-          className="hover:underline"
+          className="hover:underline md:pe-2  text-[12px]"
           type="button"
           onClick={() => router.push('/terms-condition')}
         >
@@ -100,7 +100,7 @@ const Footer = () => {
         </button>
         <span>|</span>
         <button
-          className="hover:underline"
+          className="hover:underline md:ps-2 md:pe-2 text-[12px]"
           type="button"
           onClick={() => router.push('/privacy-policy')}
         >
@@ -108,7 +108,7 @@ const Footer = () => {
         </button>
         <span>|</span>
         <button
-          className="hover:underline"
+          className="hover:underline md:ps-2 text-[12px]"
           type="button"
         // onClick={() => router.push('/copyright')}
         >
