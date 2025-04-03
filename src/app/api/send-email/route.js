@@ -14,11 +14,11 @@ export async function POST(req) {
 
 
     const emailData = {
-      firstName: formData.get ? formData.get('firstName') : formData.firstName || '',
-      lastName: formData.get ? formData.get('lastName') : formData.lastName || '',
+      fullName: formData.get ? formData.get('fullName') : formData.fullName || '',
       email: formData.get ? formData.get('email') : formData.email || '',
       company: formData.get ? formData.get('company') : formData.company || '',
       message: formData.get ? formData.get('message') : formData.message || '',
+      industry:formData.get ? formData.get('industry') : formData.industry || '',
     };
 
     if (!emailData.email) {
@@ -30,10 +30,10 @@ export async function POST(req) {
       to: process.env.EMAIL_USER,
       subject: 'New Contact Form Submission',
       html: `
-                <p><strong>First Name:</strong> ${emailData.firstName}</p>
-                <p><strong>Last Name:</strong> ${emailData.lastName}</p>
+                <p><strong>First Name:</strong> ${emailData.fullName}</p>
                 <p><strong>Email:</strong> ${emailData.email}</p>
                 <p><strong>Company:</strong> ${emailData.company}</p>
+                <p><strong>Industry:</strong> ${emailData.industry}</p>
                 <p><strong>Message:</strong> ${emailData.message}</p>
             `,
     };
@@ -43,7 +43,7 @@ export async function POST(req) {
       to: emailData.email,
       subject: 'Thank You for Contacting Us',
       html: `
-                <p>Dear ${emailData.firstName},</p>
+                <p>Dear ${emailData.fullName},</p>
                 <p>Thank you for reaching out to us. We have received your message. Our team will review it and get back to you soon.</p>
                 <p>Best regards,</p>
                 <p>NeuroVerse Team</p>

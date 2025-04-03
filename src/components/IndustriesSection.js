@@ -27,13 +27,13 @@ const industries = [
     name: 'Education',
     description: 'AI-powered interactive tutors and content narrators enhance learning with personalized guidance and immersive storytelling.',
     icon: AcademicCapIcon,
-    audio: "/audio/ecommerce.mp3",
+    audio: "/audio/education.mp3",
   },
   {
     name: 'Finance',
     description: 'Virtual agents for loan inquiries, customer support, and personalized financial guidance.',
     icon: BanknotesIcon,
-    audio: "/audio/ecommerce.mp3",
+    audio: "/audio/finance.mp3",
   },
   {
     name: 'Real Estate',
@@ -45,7 +45,7 @@ const industries = [
     name: 'Media & Entertainment',
     description: 'AI-driven voice assistants enhance media and entertainment with dynamic voiceovers and interactive audience engagement.',
     icon: VideoCameraIcon,
-    audio: "/audio/ecommerce.mp3",
+    audio: "/audio/media-and-entertainment.mp3",
   },
   {
     name: 'Restaurant & Hotels',
@@ -57,7 +57,7 @@ const industries = [
     name: 'Technology & SaaS',
     description: 'AI-driven virtual agents enhance lead engagement and streamline customer onboarding for Technology & SaaS businesses.',
     icon: CpuChipIcon,
-    audio: "/audio/ecommerce.mp3",
+    audio: "/audio/tech-and-saas.mp3",
   },
 ];
 

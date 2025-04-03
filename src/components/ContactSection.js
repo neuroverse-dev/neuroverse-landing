@@ -1,16 +1,18 @@
 'use client'
 import { useState } from 'react'
-import { Field, Label, Switch } from '@headlessui/react'
 import { toastText } from '@/util/util'
+import { motion, AnimatePresence } from "framer-motion";
+import Confetti from "react-confetti";
 
 export default function ContactSection() {
-  const [agreed, setAgreed] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
   const [dailyCalls, setDailyCalls] = useState("");
+  const [noOfEmployee, setNoOfEmployee] = useState("");
   const [minutesPerCall, setMinutesPerCall] = useState("");
   const [workingHours, setWorkingHours] = useState("");
   const [totalCost, setTotalCost] = useState(0.00);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const calculateCost = () => {
     const calls = parseInt(dailyCalls, 10) || 0;
@@ -25,8 +27,17 @@ export default function ContactSection() {
     }
 
     const perMinuteCost = calls * minutes * 30 * 0.15;
-    const totalCost = (cost + perMinuteCost) / (workingHours * 30);
+    const totalCost = (cost + perMinuteCost) / (workingHours * noOfEmployee * 30);
     setTotalCost(isNaN(totalCost) ? 0.00 : totalCost);
+
+    if (!isNaN(totalCost)) {
+      setIsModalOpen(true);
+    }
+    setDailyCalls("")
+    setMinutesPerCall("")
+    setNoOfEmployee("")
+    setWorkingHours("")
+
 
   };
 
@@ -35,10 +46,10 @@ export default function ContactSection() {
     e.preventDefault()
     setIsLoading(true);
 
-    // Create a FormData object
+
     const formData = new FormData(e.target);
 
-    // Convert formData to an object
+
     const formValues = Object.fromEntries(formData.entries());
 
 
@@ -102,16 +113,16 @@ export default function ContactSection() {
           </div>
 
           <form action="#" method="POST" onSubmit={handleSubmit} className="mx-auto mt-12 max-w-xl">
-            <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+            <div className="grid grid-cols-1  gap-y-6">
               {/* First Name */}
               <div>
-                <label htmlFor="firstName" className="block text-sm font-semibold text-gray-900">
-                  First name
+                <label htmlFor="fullName" className="block text-sm font-semibold text-gray-900">
+                  Full name
                 </label>
                 <div className="mt-2.5">
                   <input
-                    id="firstName"
-                    name="firstName"
+                    id="fullName"
+                    name="fullName"
                     type="text"
                     required
                     autoComplete="given-name"
@@ -121,7 +132,7 @@ export default function ContactSection() {
               </div>
 
               {/* Last Name */}
-              <div>
+              {/* <div>
                 <label htmlFor="lastName" className="block text-sm font-semibold text-gray-900">
                   Last name
                 </label>
@@ -135,7 +146,7 @@ export default function ContactSection() {
                     className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-indigo-600"
                   />
                 </div>
-              </div>
+              </div> */}
 
               {/* Company */}
               <div className="sm:col-span-2">
@@ -151,6 +162,31 @@ export default function ContactSection() {
                     autoComplete="organization"
                     className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-indigo-600"
                   />
+                </div>
+              </div>
+              <div className="sm:col-span-2">
+                <label htmlFor="industry" className="block text-sm font-semibold text-gray-900">
+                  Industry
+                </label>
+                <div className="mt-2.5">
+                  <select
+                    id="industry"
+                    name="industry"
+                    required
+                    className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-300 focus:outline focus:outline-2 focus:outline-indigo-600"
+                  >
+                    <option value="">Choose an industry...</option>
+                    <option value="ecommerce">E-commerce</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="education">Education</option>
+                    <option value="finance">Finance</option>
+                    <option value="real-estate">Real Estate</option>
+                    <option value="media-entertainment">Media & Entertainment</option>
+                    <option value="restaurant-hotels">Restaurant & Hotels</option>
+                    <option value="technology-saas">Technology & SaaS</option>
+
+                    <option value="other">Other</option>
+                  </select>
                 </div>
               </div>
 
@@ -174,7 +210,7 @@ export default function ContactSection() {
               {/* Message */}
               <div className="sm:col-span-2">
                 <label htmlFor="message" className="block text-sm font-semibold text-gray-900">
-                  Message
+                  What your agent should do?
                 </label>
                 <div className="mt-2.5">
                   <textarea
@@ -189,7 +225,7 @@ export default function ContactSection() {
               </div>
 
               {/* Privacy Agreement */}
-              <div className="flex gap-x-4 sm:col-span-2 items-center">
+              {/* <div className="flex gap-x-4 sm:col-span-2 items-center">
                 <div className="flex h-6 items-center">
                   <Switch
                     checked={agreed}
@@ -210,18 +246,18 @@ export default function ContactSection() {
                   </a>
                   .
                 </label>
-              </div>
+              </div> */}
             </div>
 
             {/* Submit Button */}
             <div className="mt-10">
               <button
                 type="submit"
-                disabled={!agreed || isLoading}
-                className={`block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${agreed ? 'bg-indigo-600 hover:bg-indigo-500 focus-visible:outline-indigo-600' : 'bg-gray-400 cursor-not-allowed'
+                disabled={isLoading}
+                className={`block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${!isLoading ? 'bg-indigo-600 hover:bg-indigo-500 focus-visible:outline-indigo-600' : 'bg-gray-400 cursor-not-allowed'
                   }`}
               >
-                {isLoading ? "Loading..." : "Enquire Now"}
+                {isLoading ? "Loading..." : "Get my AI-Agent"}
               </button>
             </div>
           </form>
@@ -230,14 +266,29 @@ export default function ContactSection() {
         <div className="order-1 lg:order-none">
           <div className="max-w-lg mx-auto  bg-gray-100 p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold text-center mb-4">Cost Calculator</h2>
-            <div className="bg-gray-200 p-4 rounded mb-4 text-sm">
+            {/* <div className="bg-gray-200 p-4 rounded mb-4 text-sm">
               <ul className="list-disc list-inside">
                 <li>Charges are based on tier system 0 to 1200: $200</li>
                 <li>For every additional 1,200 calls, the charge increases by $200</li>
                 <li>Per Minute rate: $0.15</li>
               </ul>
-            </div>
+            </div> */}
             <div className="space-y-4">
+              <div className="relative w-full">
+                <input
+                  type="number"
+                  // placeholder="Average daily calls"
+                  className="w-full p-2 pr-12 border rounded bg-white appearance-none focus:outline focus:outline-2 focus:outline-indigo-600"
+                  value={noOfEmployee}
+                  onChange={(e) => setNoOfEmployee(e.target.value)}
+                  style={{
+                    appearance: "textfield",
+                  }}
+                />
+                <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-xs text-gray-500">
+                  Number of employees
+                </span>
+              </div>
               <div className="relative w-full">
                 <input
                   type="number"
@@ -283,27 +334,64 @@ export default function ContactSection() {
                     }}
                   />
                   <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-xs text-gray-500">
-                    Hours/day
+                    Hours/Day of employee
                   </span>
                 </div>
               </div>
 
               <button
                 onClick={calculateCost}
-                className="w-full text-white py-2 rounded bg-indigo-600 hover:bg-indigo-500 focus-visible:outline-indigo-600"
+                className="w-full text-white py-2 font-semibold rounded bg-indigo-600 hover:bg-indigo-500 focus-visible:outline-indigo-600"
               >
                 Calculate
               </button>
             </div>
-            <div className="flex justify-between mt-5 items-center space-x-4">
-              <span className="font-bold text-lg">Per Hour Costing </span>
+
+            {/* <div className="flex justify-between mt-5 items-center space-x-4">
+              <span className="font-bold  text-lg">Per Hour Costing </span>
               <div className="border border-gray-300 px-4 py-2 rounded-lg text-lg font-semibold">
                 {totalCost.toFixed(2)} <span className="font-bold">$</span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed top-0 left-0 w-full h-full flex items-center justify-center  bg-opacity-50"
+          >
+            <div className="bg-indigo-50 p-8 md:p-12 rounded-2xl shadow-2xl text-center w-[90%] max-w-lg">
+
+              {/* Animated Emoji */}
+              <motion.div
+                initial={{ y: -10 }}
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 0.6, repeat: Infinity, ease: "easeInOut" }}
+                className="text-5xl"
+              >
+                🎉
+              </motion.div>
+
+              <h2 className="text-2xl font-bold text-indigo-600 mt-2">Congratulations!</h2>
+              <p className="mt-2 text-gray-600">Calculation completed successfully.The cost per hour is <p className='font-bold'> {totalCost.toFixed(2)}</p></p>
+
+              {/* Close Button */}
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="mt-4 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-500"
+              >
+                Close
+              </button>
+            </div>
+          </motion.div>
+
+        )}
+      </AnimatePresence>
     </div>
 
   )
